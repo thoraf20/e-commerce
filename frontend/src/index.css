@@ -224,8 +224,16 @@ a:hover {
   display: flex;
   flex-direction: column;;
 }
-.button{
+
+.button-primary{
+  font-weight: bold;
   padding: 1rem;
-  border: .1rem #0f0d0d;
+  border: .1rem #808080 solid;
+  border-radius: .5rem;
+  background-color: rgb(231, 216, 43);
   cursor : pointer;
+}
+
+.button-primary:hover {
+  border: .1rem #404040 solid;
 }

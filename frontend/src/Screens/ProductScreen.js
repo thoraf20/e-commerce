@@ -6,7 +6,7 @@ export default function ProductScreen(props) {
     console.log(props.match.params.id);
     const product = data.products.find(val => val._id === props.match.params.id);
     return (
-        <div>
+        <div className="conatiner">
             <div className="bact-to-result">
                 <Link to="/">Back to result</Link>
             </div>
@@ -50,7 +50,7 @@ export default function ProductScreen(props) {
                             </select>
                         </li>
                         <li>
-                            <button className="button">Add to cart</button>
+                            <button className="button-primary">Add to cart</button>
                         </li>
                     </ul>
                 </div>
