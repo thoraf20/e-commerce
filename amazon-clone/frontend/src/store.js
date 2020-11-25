@@ -3,9 +3,11 @@ import {productDetailsReducer, productListReducer} from "./reducers/productReduc
 import { applyMiddleware } from "redux"
 import {cartReducer} from "./reducers/CartReducers";
 import thunk from "redux-thunk";
+import Cookie from "js-cookie";
 
+const cartItems = Cookie.getJSON("cartItems") || []
 
-const initialState =[];
+const initialState ={cart: {cartItems} };
 const reducer = combineReducers({
     productList: productListReducer,
     productDetails: productDetailsReducer,
