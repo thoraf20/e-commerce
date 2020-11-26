@@ -21,20 +21,20 @@ export default function HomeScreen(props) {
     return loading ? <div>Loading...</div> : 
      error ? <div>{error}</div> :
 
-    ( <ul class="products">
+    ( <ul className="products">
             {
               products.map(product =>
             <li key={product.i_d}>
                 <div class="product ">
                     <Link to={"/product/" + product._id}>
-                        <img class="product-image" src={product.image} alt="products" />
+                        <img className="product-image" src={product.image} alt="products" />
                     </Link>
-                    <div class="product-name">
+                    <div className="product-name">
                       <Link to={"/product/" + product._id}>{product.name}</Link>
                     </div>
-                    <div class="product-author"> { product.author}</div>
-                    <div class="product-price">{product.price}</div>
-                    <div class="product-rating">{product.rating} Stars { product.numReview}</div>
+                    <div className="product-author"> { product.author}</div>
+                    <div className="product-price">{product.price}</div>
+                    <div className="product-rating">{product.rating} Stars { product.numReview}</div>
                 </div>
             </li>)
             }
