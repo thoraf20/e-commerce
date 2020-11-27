@@ -2,18 +2,21 @@ import {combineReducers, compose, createStore} from "redux";
 import {productDetailsReducer, productListReducer} from "./reducers/productReducers";
 import { applyMiddleware } from "redux"
 import {cartReducer} from "./reducers/CartReducers";
-import {userSigninReducer} from "./reducers/userReducers";
+import {userRegisterReducer, userSigninReducer} from "./reducers/userReducers";
 import thunk from "redux-thunk";
 import Cookie from "js-cookie";
 
-const cartItems = Cookie.getJSON("cartItems") || []
+const cartItems = Cookie.getJSON("cartItems") || [];
+const userInfo = Cookie.getJSON("userInfo") || []
 
-const initialState ={cart: {cartItems} };
+
+const initialState ={cart: {cartItems}, userSign: {userInfo} };
 const reducer = combineReducers({
     productList: productListReducer,
     productDetails: productDetailsReducer,
     cart: cartReducer,
-    userSingin:userSigninReducer,
+    userSignin: userSigninReducer,
+    userRegister: userRegisterReducer
 
 });
 
